@@ -93,6 +93,7 @@ const baseConfig = {
     'quill.bubble': './assets/bubble.styl',
     'quill.snow': './assets/snow.styl',
     'unit.js': './test/unit.js',
+    'fuzzing.js': './test/fuzzing.ts',
   },
   output: {
     filename: '[name]',
