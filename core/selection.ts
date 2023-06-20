@@ -8,7 +8,7 @@ import Scroll from '../blots/scroll';
 
 const debug = logger('quill:selection');
 
-type NativeRange = ReturnType<Document['createRange']>;
+type NativeRange = AbstractRange;
 
 interface NormalizedRange {
   start: {

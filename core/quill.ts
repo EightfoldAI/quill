@@ -15,6 +15,7 @@ import logger, { DebugLevel } from './logger';
 import Module from './module';
 import Selection, { Range } from './selection';
 import Theme, { ThemeConstructor } from './theme';
+import Input from './input';
 
 const debug = logger('quill');
 
@@ -135,6 +136,7 @@ class Quill {
   emitter: Emitter;
   allowReadOnlyEdits: boolean;
   editor: Editor;
+  input: Input;
   selection: Selection;
 
   theme: Theme;
@@ -171,6 +173,7 @@ class Quill {
       emitter: this.emitter,
     });
     this.editor = new Editor(this.scroll);
+    this.input = new Input(this);
     this.selection = new Selection(this.scroll, this.emitter);
     this.theme = new this.options.theme(this, this.options); // eslint-disable-line new-cap
     this.keyboard = this.theme.addModule('keyboard');
